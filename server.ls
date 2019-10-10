@@ -4,6 +4,7 @@ require! {
     \express
     \./template.json
     \fetch-base64
+    \cors
 }
 
 get-file = (name, cb)->
@@ -54,7 +55,7 @@ get-cached-token = (contract_address, cb)->
     cb null, data
     
 app = express!
-
+app.use cors!
 app.get \/token/:contract_address , (req, res)->
     err, data <- get-cached-token req.params.contract_address #"0x83984d6142934bb535793a82adb0a46ef0f66b6d"
     return res.status(400).send("#err") if err?

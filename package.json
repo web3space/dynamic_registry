@@ -11,6 +11,7 @@
   "dependencies": {
     "base64-img": "^1.0.4",
     "coingecko-api": "^1.0.6",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "fetch-base64": "^2.1.2",
     "image2base64": "0.0.3",
