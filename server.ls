@@ -5,6 +5,7 @@ require! {
     \./template.json
     \fetch-base64
     \cors
+    \greenlock-express : ge
 }
 
 get-file = (name, cb)->
@@ -61,9 +62,16 @@ app.get \/token/:contract_address , (req, res)->
     return res.status(400).send("#err") if err?
     res.send data
 
-app.listen 8888
 
-
+require(\greenlock-express).create({
+  email: \some@gmail.com  
+  agreeTos: yes                    
+  configDir: \./.ssl/     
+  communityMember: yes             
+  telemetry: no
+  app: app
+  debug: true
+}).listen(80, 443)
 
 
 
