@@ -32,7 +32,7 @@ get-token = (contract_address, cb)->
     err, data <- get-cached "#{base}/coins/ethereum/contract/#{contract_address}"
     info = { ...template }
     image <- fetch-base64.remote data.image.small .then
-    info.image = image.0
+    info.image = image.1
     info.token = data.symbol
     SYMBOL = data.symbol.to-upper-case!
     usd-url = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=#{SYMBOL}&tsyms=USD"

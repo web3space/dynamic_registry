@@ -45,7 +45,7 @@
       info = (import$({}, template));
       return fetchBase64.remote(data.image.small).then(function(image){
         var SYMBOL, usdUrl;
-        info.image = image[0];
+        info.image = image[1];
         info.token = data.symbol;
         SYMBOL = data.symbol.toUpperCase();
         usdUrl = "https://min-api.cryptocompare.com/data/pricemulti?fsyms=" + SYMBOL + "&tsyms=USD";
