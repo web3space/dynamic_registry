@@ -14,6 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "fetch-base64": "^2.1.2",
+    "greenlock-express": "^2.7.18",
     "image2base64": "0.0.3",
     "superagent": "^5.1.0"
   }
